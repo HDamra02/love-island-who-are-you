@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Love Island USA Season 7 Cast Member Are You?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏝️ Which Love Island USA Season 7 Cast Member Are You? 🏝️</h1>
+            <p class="subtitle">Discover your Love Island personality match!</p>
+        </header>
+
+        <div id="start-screen" class="screen active">
+            <div class="intro-content">
+                <h2>Ready to find your villa twin?</h2>
+                <p>Answer our personality questions and we'll match you with your Love Island USA Season 7 doppelganger!</p>
+                <button id="start-btn" class="btn-primary">Start Quiz</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="question-counter" class="question-counter">Question 1 of 15</span>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text" class="question-text"></h2>
+                <div id="options-container" class="options-container"></div>
+            </div>
+
+            <div class="navigation">
+                <button id="prev-btn" class="btn-secondary" disabled>Previous</button>
+                <button id="next-btn" class="btn-primary" disabled>Next</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-container">
+                <h2 class="result-title">🎉 Congratulations! 🎉</h2>
+                <h3 class="result-subtitle">Your Love Island USA Season 7 Character is:</h3>
+                <div id="character-result" class="character-result">
+                    <h1 id="character-name" class="character-name"></h1>
+                    <div id="character-image" class="character-image"></div>
+                    <div id="character-info" class="character-info"></div>
+                </div>
+                <div class="result-actions">
+                    <button id="restart-btn" class="btn-primary">Take Quiz Again</button>
+                    <button id="share-btn" class="btn-secondary">Share Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

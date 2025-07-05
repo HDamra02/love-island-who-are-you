@@ -1,0 +1,25 @@
+{
+  "name": "love-island-personality-quiz",
+  "version": "1.0.0",
+  "description": "Love Island USA Season 7 personality quiz - find your cast member match!",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Static site ready for deployment'"
+  },
+  "keywords": [
+    "love-island",
+    "personality-quiz",
+    "reality-tv",
+    "quiz",
+    "interactive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/love-island-who-are-you#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/love-island-who-are-you.git"
+  }
+}
