@@ -257,6 +257,16 @@ header h1 {
     font-size: 8rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .character-info {
@@ -318,6 +328,13 @@ header h1 {
         width: 250px;
         height: 250px;
         font-size: 6rem;
+    }
+    
+    .character-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
     }
     
     .result-actions {
@@ -670,17 +687,17 @@ const questionPool = [
     }
 ];
 
-// Character images - using emojis as placeholders
+// Character images - using official Peacock photos
 const characterImages = {
-    huda_mustafa: "🔥",
-    jeremiah_brown: "💫", 
-    chelley_bissainthe: "⭐",
-    olandria_carthen: "👑",
-    belle_a_walker: "🌺",
-    taylor_williams: "🤠",
-    nicolas_vansteenberghe: "🏥",
-    ace_greene: "💃",
-    austin_shepard: "😄"
+    huda_mustafa: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_huda.jpg",
+    jeremiah_brown: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_jeremiah.jpg",
+    chelley_bissainthe: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_chelley.jpg",
+    olandria_carthen: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_olandria.jpg",
+    belle_a_walker: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_belle-a.jpg",
+    taylor_williams: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_taylor.jpg",
+    nicolas_vansteenberghe: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_nicolas.jpg",
+    ace_greene: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_ace.jpg",
+    austin_shepard: "https://www.peacocktv.com/sites/peacock/files/styles/scale_600/public/2025/05/peacock_original_loveisland_s7_characterportrait_4000x6000_text_austin.jpg"
 };
 
 class LoveIslandQuiz {
@@ -876,13 +893,13 @@ class LoveIslandQuiz {
 
     displayResult(characterKey) {
         const character = castMembers[characterKey];
-        const emoji = characterImages[characterKey];
+        const imageUrl = characterImages[characterKey];
         
         document.getElementById('character-name').textContent = character.name;
         
-        // Set character image (emoji)
+        // Set character image (actual photo)
         const imageContainer = document.getElementById('character-image');
-        imageContainer.textContent = emoji;
+        imageContainer.innerHTML = `<img src="${imageUrl}" alt="${character.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='${character.emoji || '👤'}'; this.parentElement.style.fontSize='8rem';">`;
         
         // Create character info display
         const infoContainer = document.getElementById('character-info');
